@@ -27,12 +27,14 @@ public class ViewJPanel extends javax.swing.JPanel {
      */
     public ViewJPanel() {
         initComponents();
+        disableAll();
     }
     
     public ViewJPanel(Patient p1){
         this.p1 = p1;
         initComponents();
         populateData();
+        disableAll();
     }
 
     /**
@@ -187,6 +189,9 @@ public class ViewJPanel extends javax.swing.JPanel {
         this.patientTypeJComboBox.setSelectedItem(p1.getPatientType());
         this.imgJLabel.setIcon(p1.getProfilePicture());
         
+    }
+    
+    public void disableAll(){
         //setting the text field, radio buttons and combo box to be disabled
         this.jTextFieldName.setEnabled(false);
         this.jRadioButtonFemale.setEnabled(false);
@@ -195,7 +200,6 @@ public class ViewJPanel extends javax.swing.JPanel {
         this.patientTypeJComboBox.setEnabled(false);
         
         this.jButtonHidden.setVisible(false);
-
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
